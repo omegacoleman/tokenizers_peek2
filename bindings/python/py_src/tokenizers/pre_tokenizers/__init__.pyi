@@ -63,9 +63,6 @@ class BertPreTokenizer(PreTokenizer):
     This pre-tokenizer splits tokens on spaces, and also on punctuation.
     Each occurrence of a punctuation character will be treated separately.
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -131,9 +128,6 @@ class ByteLevel(PreTokenizer):
             Set this to :obj:`False` to prevent this `pre_tokenizer` from using
             the GPT2 specific regexp for spliting on whitespace.
     """
-    def __init__(self, add_prefix_space=True, trim_offsets=True, use_regex=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -236,9 +230,6 @@ class CharDelimiterSplit(PreTokenizer):
         delimiter: str:
             The delimiter char that will be used to split input
     """
-    def __init__(self, delimiter):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
@@ -317,9 +308,6 @@ class Digits(PreTokenizer):
 
                 "Call 123 please" -> "Call ", "123", " please"
     """
-    def __init__(self, individual_digits=False):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -392,9 +380,6 @@ class FixedLength(PreTokenizer):
             Strings are split on the character level rather than the byte level to avoid
             splitting unicode characters consisting of multiple bytes.
     """
-    def __init__(self, length=5):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -474,9 +459,6 @@ class Metaspace(PreTokenizer):
             token (relevant when special tokens are used or other pre_tokenizer are used).
 
     """
-    def __init__(self, replacement="_", prepend_scheme="always", split=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -557,6 +539,57 @@ class Metaspace(PreTokenizer):
         """ """
         pass
 
+class PeekTwo(PreTokenizer):
+    def __getstate__(self):
+        """ """
+        pass
+
+    def __setstate__(self, state):
+        """ """
+        pass
+
+    @staticmethod
+    def custom(pretok):
+        """ """
+        pass
+
+    def pre_tokenize(self, pretok):
+        """
+        Pre-tokenize a :class:`~tokenizers.PyPreTokenizedString` in-place
+
+        This method allows to modify a :class:`~tokenizers.PreTokenizedString` to
+        keep track of the pre-tokenization, and leverage the capabilities of the
+        :class:`~tokenizers.PreTokenizedString`. If you just want to see the result of
+        the pre-tokenization of a raw string, you can use
+        :meth:`~tokenizers.pre_tokenizers.PreTokenizer.pre_tokenize_str`
+
+        Args:
+            pretok (:class:`~tokenizers.PreTokenizedString):
+                The pre-tokenized string on which to apply this
+                :class:`~tokenizers.pre_tokenizers.PreTokenizer`
+        """
+        pass
+
+    def pre_tokenize_str(self, sequence):
+        """
+        Pre tokenize the given string
+
+        This method provides a way to visualize the effect of a
+        :class:`~tokenizers.pre_tokenizers.PreTokenizer` but it does not keep track of the
+        alignment, nor does it provide all the capabilities of the
+        :class:`~tokenizers.PreTokenizedString`. If you need some of these, you can use
+        :meth:`~tokenizers.pre_tokenizers.PreTokenizer.pre_tokenize`
+
+        Args:
+            sequence (:obj:`str`):
+                A string to pre-tokeize
+
+        Returns:
+            :obj:`List[Tuple[str, Offsets]]`:
+                A list of tuple with the pre-tokenized parts and their offsets
+        """
+        pass
+
 class Punctuation(PreTokenizer):
     """
     This pre-tokenizer simply splits on punctuation as individual characters.
@@ -567,9 +600,6 @@ class Punctuation(PreTokenizer):
             Choices: "removed", "isolated" (default), "merged_with_previous", "merged_with_next",
             "contiguous"
     """
-    def __init__(self, behavior="isolated"):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -634,9 +664,6 @@ class Sequence(PreTokenizer):
     """
     This pre-tokenizer composes other pre_tokenizers and applies them in sequence
     """
-    def __init__(self, pretokenizers):
-        pass
-
     def __getitem__(self, key):
         """
         Return self[key].
@@ -726,9 +753,6 @@ class Split(PreTokenizer):
         invert (:obj:`bool`, `optional`, defaults to :obj:`False`):
             Whether to invert the pattern.
     """
-    def __init__(self, pattern, behavior, invert=False):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
@@ -820,9 +844,6 @@ class UnicodeScripts(PreTokenizer):
     Actually Hiragana and Katakana are fused with Han, and 0x30FC is Han too.
     This mimicks SentencePiece Unigram implementation.
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -904,9 +925,6 @@ class Whitespace(PreTokenizer):
              ('.', (52, 53))]
             ```
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -961,9 +979,6 @@ class WhitespaceSplit(PreTokenizer):
     """
     This pre-tokenizer simply splits on the whitespace. Works like `.split()`
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass

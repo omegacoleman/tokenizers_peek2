@@ -8,6 +8,7 @@ CharDelimiterSplit = pre_tokenizers.CharDelimiterSplit
 Digits = pre_tokenizers.Digits
 FixedLength = pre_tokenizers.FixedLength
 Metaspace = pre_tokenizers.Metaspace
+PeekTwo = pre_tokenizers.PeekTwo
 Punctuation = pre_tokenizers.Punctuation
 Sequence = pre_tokenizers.Sequence
 Split = pre_tokenizers.Split

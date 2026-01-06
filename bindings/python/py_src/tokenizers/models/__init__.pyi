@@ -8,9 +8,6 @@ class Model:
 
     This class cannot be constructed directly. Please use one of the concrete models.
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -127,21 +124,6 @@ class BPE(Model):
         ignore_merges (:obj:`bool`, `optional`):
             Whether or not to match tokens with the vocab before using merges.
     """
-    def __init__(
-        self,
-        vocab=None,
-        merges=None,
-        cache_capacity=None,
-        dropout=None,
-        unk_token=None,
-        continuing_subword_prefix=None,
-        end_of_word_suffix=None,
-        fuse_unk=None,
-        byte_fallback=False,
-        ignore_merges=False,
-    ):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -347,9 +329,6 @@ class Unigram(Model):
         vocab (:obj:`List[Tuple[str, float]]`, `optional`, `optional`):
             A list of vocabulary items and their relative score [("am", -0.2442),...]
     """
-    def __init__(self, vocab=None, unk_id=None, byte_fallback=None):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -442,9 +421,6 @@ class WordLevel(Model):
         unk_token (:obj:`str`, `optional`):
             The unknown token to be used by the model.
     """
-    def __init__(self, vocab=None, unk_token=None):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -589,9 +565,6 @@ class WordPiece(Model):
         max_input_chars_per_word (:obj:`int`, `optional`):
             The maximum number of characters to authorize in a single word.
     """
-    def __init__(self, vocab=None, unk_token="[UNK]", max_input_chars_per_word=100, continuing_subword_prefix="##"):
-        pass
-
     def __getstate__(self):
         """ """
         pass

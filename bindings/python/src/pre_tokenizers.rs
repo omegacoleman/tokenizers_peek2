@@ -520,7 +520,7 @@ impl PyBertPreTokenizer {
     }
 }
 
-#[pyclass(extends=PyPreTokenizer, module = "tokenizers.pre_tokenizers", name = "PyPeekTwo")]
+#[pyclass(extends=PyPreTokenizer, module = "tokenizers.pre_tokenizers", name = "PeekTwo")]
 pub struct PyPeekTwo {}
 #[pymethods]
 impl PyPeekTwo {

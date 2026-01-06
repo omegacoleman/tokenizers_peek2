@@ -52,21 +52,6 @@ class BpeTrainer(Trainer):
             highly repetitive tokens like `======` for wikipedia
 
     """
-    def __init__(
-        self,
-        vocab_size=30000,
-        min_frequency=0,
-        show_progress=True,
-        special_tokens=[],
-        limit_alphabet=None,
-        initial_alphabet=[],
-        continuing_subword_prefix=None,
-        end_of_word_suffix=None,
-        max_token_length=None,
-        words={},
-    ):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -199,19 +184,6 @@ class UnigramTrainer(Trainer):
             The number of iterations of the EM algorithm to perform before
             pruning the vocabulary.
     """
-    def __init__(
-        self,
-        vocab_size=8000,
-        show_progress=True,
-        special_tokens=[],
-        initial_alphabet=[],
-        shrinking_factor=0.75,
-        unk_token=None,
-        max_piece_length=16,
-        n_sub_iterations=2,
-    ):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -277,9 +249,6 @@ class WordLevelTrainer(Trainer):
         special_tokens (:obj:`List[Union[str, AddedToken]]`):
             A list of special tokens the model should know of.
     """
-    def __init__(self, vocab_size=30000, min_frequency=0, show_progress=True, special_tokens=[]):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -360,19 +329,6 @@ class WordPieceTrainer(Trainer):
         end_of_word_suffix (:obj:`str`, `optional`):
             A suffix to be used for every subword that is a end-of-word.
     """
-    def __init__(
-        self,
-        vocab_size=30000,
-        min_frequency=0,
-        show_progress=True,
-        special_tokens=[],
-        limit_alphabet=None,
-        initial_alphabet=[],
-        continuing_subword_prefix="##",
-        end_of_word_suffix=None,
-    ):
-        pass
-
     def __getstate__(self):
         """ """
         pass

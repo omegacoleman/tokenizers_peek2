@@ -75,9 +75,6 @@ class BertNormalizer(Normalizer):
         lowercase (:obj:`bool`, `optional`, defaults to :obj:`True`):
             Whether to lowercase.
     """
-    def __init__(self, clean_text=True, handle_chinese_chars=True, strip_accents=None, lowercase=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -169,9 +166,6 @@ class ByteLevel(Normalizer):
     """
     Bytelevel Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -223,9 +217,6 @@ class Lowercase(Normalizer):
     """
     Lowercase Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -277,9 +268,6 @@ class NFC(Normalizer):
     """
     NFC Unicode Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -331,9 +319,6 @@ class NFD(Normalizer):
     """
     NFD Unicode Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -385,9 +370,6 @@ class NFKC(Normalizer):
     """
     NFKC Unicode Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -439,9 +421,6 @@ class NFKD(Normalizer):
     """
     NFKD Unicode Normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -493,9 +472,6 @@ class Nmt(Normalizer):
     """
     Nmt normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -548,9 +524,6 @@ class Precompiled(Normalizer):
     Precompiled normalizer
     Don't use manually it is used for compatibility for SentencePiece.
     """
-    def __init__(self, precompiled_charsmap):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -602,9 +575,6 @@ class Prepend(Normalizer):
     """
     Prepend normalizer
     """
-    def __init__(self, prepend):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -666,9 +636,6 @@ class Replace(Normalizer):
     """
     Replace normalizer
     """
-    def __init__(self, pattern, content):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -745,9 +712,6 @@ class Sequence(Normalizer):
         normalizers (:obj:`List[Normalizer]`):
             A list of Normalizer to be run as a sequence
     """
-    def __init__(self, normalizers):
-        pass
-
     def __getitem__(self, key):
         """
         Return self[key].
@@ -815,9 +779,6 @@ class Strip(Normalizer):
     """
     Strip normalizer
     """
-    def __init__(self, left=True, right=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -889,9 +850,6 @@ class StripAccents(Normalizer):
     """
     StripAccents normalizer
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass

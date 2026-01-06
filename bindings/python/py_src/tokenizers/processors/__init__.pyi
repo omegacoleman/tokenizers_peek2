@@ -61,9 +61,6 @@ class BertProcessing(PostProcessor):
         cls (:obj:`Tuple[str, int]`):
             A tuple with the string representation of the CLS token, and its id
     """
-    def __init__(self, sep, cls):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
@@ -144,9 +141,6 @@ class ByteLevel(PostProcessor):
             the start of the first token's offset by 1. Only has an effect if :obj:`trim_offsets`
             is set to :obj:`True`.
     """
-    def __init__(self, add_prefix_space=None, trim_offsets=None, use_regex=None):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -244,9 +238,6 @@ class RobertaProcessing(PostProcessor):
             Whether the add_prefix_space option was enabled during pre-tokenization. This
             is relevant because it defines the way the offsets are trimmed out.
     """
-    def __init__(self, sep, cls, trim_offsets=True, add_prefix_space=True):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
@@ -339,9 +330,6 @@ class Sequence(PostProcessor):
         processors (:obj:`List[PostProcessor]`)
             The processors that need to be chained
     """
-    def __init__(self, processors):
-        pass
-
     def __getitem__(self, key):
         """
         Return self[key].
@@ -465,9 +453,6 @@ class TemplateProcessing(PostProcessor):
              The given dict expects the provided :obj:`ids` and :obj:`tokens` lists to have
              the same length.
     """
-    def __init__(self, single=None, pair=None, special_tokens=None):
-        pass
-
     def __getstate__(self):
         """ """
         pass

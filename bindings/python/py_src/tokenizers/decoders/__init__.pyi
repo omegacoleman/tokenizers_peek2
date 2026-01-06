@@ -4,15 +4,6 @@ class DecodeStream:
     Class needed for streaming decode
 
     """
-    def __init__(self, ids=None, skip_special_tokens=False):
-        pass
-
-    def __getstate__(self, /):
-        """
-        Helper for pickle.
-        """
-        pass
-
     def step(self, tokenizer, id):
         """
         Streaming decode step
@@ -72,9 +63,6 @@ class BPEDecoder(Decoder):
             The suffix that was used to characterize an end-of-word. This suffix will
             be replaced by whitespaces during the decoding
     """
-    def __init__(self, suffix="</w>"):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -119,9 +107,6 @@ class ByteFallback(Decoder):
     cannot be decoded you will get � instead for each inconvertible byte token
 
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -155,9 +140,6 @@ class ByteLevel(Decoder):
     This decoder is to be used in tandem with the :class:`~tokenizers.pre_tokenizers.ByteLevel`
     :class:`~tokenizers.pre_tokenizers.PreTokenizer`.
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -197,9 +179,6 @@ class CTC(Decoder):
             Whether to cleanup some tokenization artifacts.
             Mainly spaces before punctuation, and some abbreviated english forms.
     """
-    def __init__(self, pad_token="<pad>", word_delimiter_token="|", cleanup=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -263,9 +242,6 @@ class Fuse(Decoder):
     This is the last step of decoding, this decoder exists only if
     there is need to add other decoders *after* the fusion
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -307,9 +283,6 @@ class Metaspace(Decoder):
             Choices: "always", "never", "first". First means the space is only added on the first
             token (relevant when special tokens are used or other pre_tokenizer are used).
     """
-    def __init__(self, replacement="▁", prepend_scheme="always", split=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -373,9 +346,6 @@ class Replace(Decoder):
     This decoder is to be used in tandem with the :class:`~tokenizers.pre_tokenizers.Replace`
     :class:`~tokenizers.pre_tokenizers.PreTokenizer`.
     """
-    def __init__(self, pattern, content):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -410,9 +380,6 @@ class Sequence(Decoder):
         decoders (:obj:`List[Decoder]`)
             The decoders that need to be chained
     """
-    def __init__(self, decoders):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
@@ -448,9 +415,6 @@ class Strip(Decoder):
     Strip normalizer
     Strips n left characters of each token, or n right characters of each token
     """
-    def __init__(self, content=" ", left=0, right=0):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -519,9 +483,6 @@ class WordPiece(Decoder):
             Whether to cleanup some tokenization artifacts. Mainly spaces before punctuation,
             and some abbreviated english forms.
     """
-    def __init__(self, prefix="##", cleanup=True):
-        pass
-
     def __getstate__(self):
         """ """
         pass

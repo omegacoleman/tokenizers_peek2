@@ -34,9 +34,6 @@ class AddedToken:
             Defines whether this token should be skipped when decoding.
 
     """
-    def __init__(self, content=None, single_word=False, lstrip=False, rstrip=False, normalized=True, special=False):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -133,9 +130,6 @@ class Encoding:
     """
     The :class:`~tokenizers.Encoding` represents the output of a :class:`~tokenizers.Tokenizer`.
     """
-    def __init__(self):
-        pass
-
     def __getstate__(self):
         """ """
         pass
@@ -646,18 +640,9 @@ class NormalizedString:
         sequence: str:
             The string sequence used to initialize this NormalizedString
     """
-    def __init__(self, sequence):
-        pass
-
     def __getitem__(self, key):
         """
         Return self[key].
-        """
-        pass
-
-    def __getstate__(self, /):
-        """
-        Helper for pickle.
         """
         pass
 
@@ -833,15 +818,6 @@ class PreTokenizedString:
         sequence: str:
             The string sequence used to initialize this PreTokenizedString
     """
-    def __init__(self, sequence):
-        pass
-
-    def __getstate__(self, /):
-        """
-        Helper for pickle.
-        """
-        pass
-
     def get_splits(self, offset_referential="original", offset_type="char"):
         """
         Get the splits currently managed by the PreTokenizedString
@@ -923,25 +899,8 @@ class Regex:
     """
     Instantiate a new Regex with the given pattern
     """
-    def __init__(self, pattern):
-        pass
-
-    def __getstate__(self, /):
-        """
-        Helper for pickle.
-        """
-        pass
 
 class Token:
-    def __init__(self, id, value, offsets):
-        pass
-
-    def __getstate__(self, /):
-        """
-        Helper for pickle.
-        """
-        pass
-
     def as_tuple(self):
         """ """
         pass
@@ -986,9 +945,6 @@ class Tokenizer:
             The core algorithm that this :obj:`Tokenizer` should be using.
 
     """
-    def __init__(self, model):
-        pass
-
     def __getnewargs__(self):
         """ """
         pass
