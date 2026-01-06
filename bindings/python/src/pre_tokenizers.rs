@@ -14,6 +14,7 @@ use tk::pre_tokenizers::delimiter::CharDelimiterSplit;
 use tk::pre_tokenizers::digits::Digits;
 use tk::pre_tokenizers::fixed_length::FixedLength;
 use tk::pre_tokenizers::metaspace::{Metaspace, PrependScheme};
+use tk::pre_tokenizers::peektwo::PeekTwo;
 use tk::pre_tokenizers::punctuation::Punctuation;
 use tk::pre_tokenizers::split::Split;
 use tk::pre_tokenizers::unicode_scripts::UnicodeScripts;
@@ -67,6 +68,10 @@ impl PyPreTokenizer {
                             .into_any(),
                         PreTokenizerWrapper::Split(_) => Py::new(py, (PySplit {}, base))?
                             .into_any(),
+                        PreTokenizerWrapper::PeekTwo(_) => {
+                            Py::new(py, (PyPeekTwo {}, base))?
+                                .into_any()
+                        }
                         PreTokenizerWrapper::Punctuation(_) => {
                             Py::new(py, (PyPunctuation {}, base))?
                                 .into_any()
@@ -512,6 +517,22 @@ impl PyBertPreTokenizer {
     #[pyo3(text_signature = "(self)")]
     fn new() -> (Self, PyPreTokenizer) {
         (PyBertPreTokenizer {}, BertPreTokenizer.into())
+    }
+}
+
+#[pyclass(extends=PyPreTokenizer, module = "tokenizers.pre_tokenizers", name = "PyPeekTwo")]
+pub struct PyPeekTwo {}
+#[pymethods]
+impl PyPeekTwo {
+    #[new]
+    #[pyo3(signature = (), text_signature = "(self)")]
+    fn new() -> PyResult<(Self, PyPreTokenizer)> {
+        Ok((
+            PyPeekTwo {},
+            ToPyResult(PeekTwo::new())
+                .into_py()?
+                .into(),
+        ))
     }
 }
 
@@ -963,6 +984,7 @@ pub fn pre_tokenizers(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<PyBertPreTokenizer>()?;
     m.add_class::<PyMetaspace>()?;
     m.add_class::<PyCharDelimiterSplit>()?;
+    m.add_class::<PyPeekTwo>()?;
     m.add_class::<PyPunctuation>()?;
     m.add_class::<PySequence>()?;
     m.add_class::<PyDigits>()?;
