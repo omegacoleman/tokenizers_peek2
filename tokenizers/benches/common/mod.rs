@@ -49,7 +49,7 @@ where
         for batch in batches {
             let batch = batch.clone();
             let start = Instant::now();
-            let _ = black_box(tokenizer.encode_batch(batch, false));
+            let _ = black_box(tokenizer.encode_batch_fast(batch, false));
             duration = duration.checked_add(start.elapsed()).unwrap();
         }
     }
